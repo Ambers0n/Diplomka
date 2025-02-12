@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* body {
+
+} */
+html {
+  scroll-behavior: smooth;
+  font-family: "Silkscreen", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* navigation */
+
+.navi {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #d8d8d8;
+  box-shadow: 2px 2px 5px 1px #ff0000;
+  border-radius: 8px;
+  padding: 15px 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 1500px;
+  font-size: 20px;
+  margin-left: 150px;
+  margin-top: 20px;
+  max-width: 80%;
+}
+.navi ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navi ul li {
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+.navi ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navi ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Preview */
+
+.Preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 70vh;
+  margin-bottom: 200px;
+  max-width: 90%;
+  margin-left: 50px;
+}
+.Preview h3 {
+  color: white;
+  font-size: 80px;
+  font-weight: 700;
+  text-shadow: 4px 4px 0px #ff0000, 8px 8px 0px #0000ff;
+}
+.Preview p {
+  color: white;
+  font-size: 35px;
+  font-weight: 500;
+  padding-top: 25px;
+}
+
+/* Main */
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 1800px;
+  width: 90%;
+  padding: 20px;
+  min-height: 85vh;
+  margin: 70px auto;
+  box-shadow: 2px 2px 5px 1px #0000ff;
+  flex-direction: column;
+}
+.main h1,
+h2 {
+  font-size: 48px;
+  text-shadow: 2px 2px 0px #ff0000, 4px 4px 0px #0000ff;
+  padding-bottom: 30px;
+}
+.main p {
+  font-size: 28px;
+}
+.about-games {
+  text-align: center;
+  max-width: 1250px;
+}
+.history-container {
+  padding-top: 90px;
+  max-width: 1250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.history-nav {
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: ease-in-out 300ms;
+}
+#prev-part {
+  background-color: #ff0000;
+}
+#prev-part:hover {
+  transform: translateX(-15px);
+}
+#next-part {
+  background-color: #0000ff;
+}
+#next-part:hover {
+  transform: translateX(15px);
+}
+
+/* Games */
+
+.game {
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.game h3 {
+  padding-bottom: 50px;
+}
+.game p {
+  font-size: 30px;
+  text-align: center;
+  max-width: 1500px;
+  margin-bottom: 150px;
+}
+.epoch-buttons {
+  margin-bottom: 20px;
+}
+.epoch-button {
+  width: 100px;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  background: #000000;
+  box-shadow: 2px 2px 0px #ff0000, 4px 4px 0px #0000ff;
+  color: white;
+  border: none;
+  transition: 200ms ease-in-out;
+}
+.epoch-button:hover {
+  transform: translateY(-5px);
+}
+.epoch-button:active {
+  transform: translateY(4px);
+  box-shadow: -2px -2px 0px #740000, -4px -4px 0px #000074;
+}
+
+.games-container {
+  position: relative;
+  height: 750px;
+  width: 1000px;
+  margin-bottom: 50px;
+}
+.game-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s, z-index 0.5s;
+  border-radius: 20px;
+  border: 1px solid white;
+  box-shadow: 2px 2px 5px 1px #ff0000;
+  margin-top: 20px;
+}
+.game-card:not(:first-child) {
+  z-index: 1;
+  transform: translateY(-20px);
+}
+.game-card.active {
+  z-index: 10;
+  transform: translateY(0);
+}
+.game-card h2 {
+  font-size: 28px;
+}
+
+.game-card h4 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.game-card p {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.game-card img {
+  width: 700px;
+  height: 400px;
+  cursor: pointer;
+}
+.qwe {
+  margin-top: 15px;
+}
+.game-card a {
+  text-decoration: none;
+  color: #0000ff;
+}
+.game-card a:hover {
+  color: #3c0074;
+}
+
+/* play */
+
+.play {
+  padding: 50px;
+  background: #000000;
+  max-width: 1000px;
+  height: 800px;
+  text-align: center;
+  margin: 0px auto;
+  border-radius: 50px;
+  color: white;
+  box-shadow: 2px 2px 5px 1px #0000ff;
+  margin-bottom: 100px;
+}
+.play p {
+  padding: 25px;
+  font-size: 28px;
+}
+.play canvas {
+  border: 2px solid #ffffff;
+  display: block;
+  margin: 0 auto;
+}
+.restart {
+  font-size: 32px;
+  text-shadow: 2px 2px 0px #ff0000, 4px 4px 0px #0000ff;
+  color: white;
+  background-color: black;
+  box-shadow: none;
+  font-weight: bold;
+  border: none;
+  scroll-behavior: smooth;
+  font-family: "Silkscreen", serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.restart:hover {
+  transform: scale(1.1);
+}
+
+/* footer */
+
+.footer {
+  margin-top: 150px;
+  padding: 25px;
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  box-shadow: inset 2px 2px 1px white;
+}
+.footer h3 {
+  padding-bottom: 25px;
+  font-size: 28px;
+}
+.footer a {
+  text-decoration: none;
+  color: #0000ff;
+  font-size: 18px;
+}
+.footer a:hover {
+  color: #3c0074;
+}
+.footer-links {
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+
+  padding: 20px;
+}
+.footer-links a {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+.footer-links a:hover {
+  transform: scale(1.1);
+}
+.footer-links a:nth-child(1) img {
+  background: linear-gradient(45deg, #facc28a6, #f1167177, #5b15e67a);
+  border-radius: 10px;
+  padding: 5px;
+}
+.footer-links img {
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+}
