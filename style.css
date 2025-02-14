@@ -296,11 +296,13 @@ h2 {
 
 .footer {
   margin-top: 150px;
-  padding: 25px;
+  padding: auto;
   background-color: #000000;
   color: white;
   text-align: center;
   box-shadow: inset 2px 2px 1px white;
+  position: absolute;
+  width: 100%;
 }
 .footer h3 {
   padding-bottom: 25px;
