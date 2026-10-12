@@ -408,6 +408,21 @@ $(document).ready(function () {
       player.x += player.speed;
     }
   });
+  canvas.addEventListener("pointerdown", movePlayerToPointer);
+  canvas.addEventListener("pointermove", (event) => {
+    if (event.buttons === 1 || event.pointerType === "touch") {
+      movePlayerToPointer(event);
+    }
+  });
+  function movePlayerToPointer(event) {
+    const bounds = canvas.getBoundingClientRect();
+    const pointerX =
+      ((event.clientX - bounds.left) / bounds.width) * canvas.width;
+    player.x = Math.max(
+      0,
+      Math.min(canvas.width - player.width, pointerX - player.width / 2)
+    );
+  }
   document.getElementById("restart").addEventListener("click", () => {
     initGame();
   });
